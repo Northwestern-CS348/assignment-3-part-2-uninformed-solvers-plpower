@@ -99,6 +99,7 @@ class KBTest(unittest.TestCase):
 
         self.runPlayXSteps(solver, [
             # [step, expected game state]
+            [1, ((2, 3), (1,), ())],
             [3, ((1, 3), (), (2,))],
             [13, ((2,), (), (1, 3))],
             [22, ((2,), (1, 3), ())],
