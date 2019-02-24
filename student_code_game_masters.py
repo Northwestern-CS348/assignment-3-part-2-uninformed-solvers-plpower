@@ -6,7 +6,7 @@ class TowerOfHanoiGame(GameMaster):
 
     def __init__(self):
         super().__init__()
-        
+
     def produceMovableQuery(self):
         """
         See overridden parent class method for more information.
@@ -33,6 +33,7 @@ class TowerOfHanoiGame(GameMaster):
         Returns:
             A Tuple of Tuples that represent the game state
         """
+
         ### student code goes here
         f_statement1 = 'fact: (on ?disk peg1)'
         myfact1 = parse_input(f_statement1)
@@ -51,12 +52,14 @@ class TowerOfHanoiGame(GameMaster):
                 for b in bindings.bindings:
                     ret_list1.append(int(b.constant.element[-1]))
                     ret_list1.sort()
+
         if self.kb.kb_ask(myfact2):
             lb2 = self.kb.kb_ask(myfact2)
             for bindings in lb2:
                 for b in bindings.bindings:
                     ret_list2.append(int(b.constant.element[-1]))
                     ret_list2.sort()
+
         if self.kb.kb_ask(myfact3):
             lb3 = self.kb.kb_ask(myfact3)
             for bindings in lb3:
@@ -65,6 +68,8 @@ class TowerOfHanoiGame(GameMaster):
                     ret_list3.sort()
         new = (tuple(ret_list1), tuple(ret_list2), tuple(ret_list3))
         return new
+
+
 
     def makeMove(self, movable_statement):
         """
@@ -93,7 +98,7 @@ class TowerOfHanoiGame(GameMaster):
         from_empty = parse_input('fact: (empty ' + from_peg + ')')
         to_empty = parse_input('fact: (empty ' + to_peg + ')')
         # statement that asks if the disk was above anything
-        above_stmt = parse_input('fact: (above ' + disk + ' ?disk)')
+        # above_stmt = parse_input('fact: (above ' + disk + ' ?disk)')
         # fact to ask if to_peg has a top_disk
         to_topdisk = parse_input('fact: (topdisk ?disk ' + to_peg + ')')
         tdisk_under = ''
@@ -137,7 +142,7 @@ class TowerOfHanoiGame(GameMaster):
             else:
                 new_top2 = parse_input('fact: (topdisk ' + top_dog + ' ' + from_peg + ')')
                 self.kb.kb_assert(new_top2)
-            print("DONE")
+            #print("DONE")
         return
 
     def reverseMove(self, movable_statement):

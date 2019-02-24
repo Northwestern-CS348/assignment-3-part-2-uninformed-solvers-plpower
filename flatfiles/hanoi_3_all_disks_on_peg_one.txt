@@ -29,6 +29,9 @@ fact: (topdisk disk1 peg1)
 fact: (empty peg2)
 fact: (empty peg3)
 
+fact: (above disk1 disk2)
+fact: (above disk2 disk3)
+
 
 rule: ((smlthan ?x ?y) (topdisk ?x ?p) (topdisk ?y ?newp)) -> (movable ?x ?p ?newp)
 rule: ((topdisk ?x ?p) (empty ?newp)) -> (movable ?x ?p ?newp)
