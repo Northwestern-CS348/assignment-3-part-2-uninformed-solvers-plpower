@@ -50,7 +50,6 @@ class SolverDFS(UninformedSolver):
                 else:
                     self.gm.reverseMove(curr.requiredMovable)
                     curr = curr.parent
-                    self.solveOneStep()
 
 class SolverBFS(UninformedSolver):
     def __init__(self, gameMaster, victoryCondition):
