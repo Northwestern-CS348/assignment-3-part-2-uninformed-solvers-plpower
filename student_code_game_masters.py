@@ -87,7 +87,7 @@ class TowerOfHanoiGame(GameMaster):
         Returns:
             None
         """
-        print(movable_statement)
+        #print(movable_statement)
         disk = str(movable_statement.terms[0])
         from_peg = str(movable_statement.terms[1])
         to_peg = str(movable_statement.terms[2])
@@ -155,12 +155,12 @@ class TowerOfHanoiGame(GameMaster):
         Returns:
             None
         """
-        print("REVERSING")
+        #print("REVERSING")
         pred = movable_statement.predicate
         sl = movable_statement.terms
         newList = [pred, sl[0], sl[2], sl[1]]
         self.makeMove(Statement(newList))
-        print("that was reversed")
+        #print("that was reversed")
 
 class Puzzle8Game(GameMaster):
 
